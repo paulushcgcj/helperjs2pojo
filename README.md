@@ -61,6 +61,6 @@ With this you will end up with a much more cleaner code.
 
 If you need to add some of the JPA annotations, like `@Entity` and `@Id`, all you have to do is add the custom annotator `org.paulushc.js2pojo.HibernateAnnotator`.
 
-### Lobom + JPA
+### Lobok + JPA
 
 If you want just a single annotator that gives you both worlds, you can use the `org.paulushc.js2pojo.HibernateLombokAnnotator` and have both things in the same annotator.
