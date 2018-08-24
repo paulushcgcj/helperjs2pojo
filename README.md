@@ -19,11 +19,6 @@ In your `pom.xml` file, add the following inside your build plugins entry, repla
             <artifactId>helper-js2pojo</artifactId>
             <version>0.0.4</version>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
-        </dependency>
     </dependencies>
     <configuration>
         <removeOldOutput>true</removeOldOutput>
@@ -46,6 +41,26 @@ In your `pom.xml` file, add the following inside your build plugins entry, repla
         </execution>
     </executions>
 </plugin>
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <version>3.0.0</version>
+    <executions>
+        <execution>
+            <id>Generate JAXB ...</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>add-source</goal>
+            </goals>
+            <configuration>
+                <sources>
+                    <source>${basedir}/target/generated-sources/json</source>
+                    <source>${basedir}/target/generated-sources/java/</source>
+                </sources>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
 ```
 
 ## Annotators
@@ -59,7 +74,34 @@ With this you will end up with a much more cleaner code.
 
 ### JPA
 
-If you need to add some of the JPA annotations, like `@Entity` and `@Id`, all you have to do is add the custom annotator `org.paulushc.js2pojo.HibernateAnnotator`.
+If you need to add some of the JPA annotations, like `@Entity` and `@Id`, all you have to do is add the custom annotator `org.paulushc.js2pojo.HibernateAnnotator`. Also you will need to add to your schema an entry marking it with entity as true.
+
+Ex:
+
+```json
+{
+  "$id": "https://example.com/person.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "entity": true,
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "age": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}
+```
 
 ### Lobok + JPA
 
