@@ -4,6 +4,8 @@ This package is intended to be used as custom Annotator to [JsonSchema2Pojo](htt
 
 With this custom annotator, you can add lombok and JPA support to generated codes.
 
+For released versions go directly to [maven central](https://mvnrepository.com/artifact/org.paulushc/helper-js2pojo)
+
 ## How to use it
 
 In your `pom.xml` file, add the following inside your build plugins entry, replacing where needed:
