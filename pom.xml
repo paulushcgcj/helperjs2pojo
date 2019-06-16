@@ -204,7 +204,7 @@
         <repository>
             <id>bintray-paulushc-org.paulushc</id>
             <name>paulushc-org.paulushc</name>
-            <url>${env.MAVEN_REPO_URL}</url>
+            <url>https://api.bintray.com/maven/paulushc/org.paulushc/helperjs2pojo/;publish=1</url>
         </repository>
     </distributionManagement>
 
