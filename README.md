@@ -1,5 +1,8 @@
 # HelperJS 2 Pojo
 
+[![pipeline status](https://gitlab.com/paulushc/helperjs2pojo/badges/master/pipeline.svg)](https://gitlab.com/paulushc/helperjs2pojo/commits/master)
+[![coverage report](https://gitlab.com/paulushc/helperjs2pojo/badges/master/coverage.svg)](https://gitlab.com/paulushc/helperjs2pojo/commits/master)
+
 This package is intended to be used as custom Annotator to [JsonSchema2Pojo](https://github.com/joelittlejohn/jsonschema2pojo).
 
 With this custom annotator, you can add lombok and JPA support to generated codes.
