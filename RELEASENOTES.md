@@ -11,3 +11,6 @@
 - Moving from CircleCI to GitlabCI
 - Fixing vulnerability issue on checkstyle
 - Automating part of release
+
+#v1.0.4
+- Fixing DM URL
