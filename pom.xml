@@ -8,6 +8,9 @@
     <artifactId>helper-js2pojo</artifactId>
     <version>0.0.4</version>
 
+    <name>Helper for JSON Schema 2 Pojo</name>
+    <description>Custom annotators to be used along with jsonschema2pojo plugin on Maven. With this custom annotator, you can add lombok and JPA support to generated codes.</description>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,7 +23,6 @@
             <artifactId>jsonschema2pojo-core</artifactId>
             <version>0.5.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
