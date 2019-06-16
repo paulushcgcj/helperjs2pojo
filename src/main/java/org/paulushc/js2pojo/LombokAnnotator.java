@@ -11,37 +11,42 @@ import org.jsonschema2pojo.AbstractAnnotator;
 
 /**
  * <p><b>LombokAnnotator</b></p>
- * Annotator implementation that adds support to Lombok from JSON schemas. It will replace all getters, setters and builders with Lombok annotations
+ * Annotator implementation that adds support to Lombok from JSON schemas.
+ * It will replace all getters, setters and builders with Lombok annotations.
  */
 public class LombokAnnotator extends AbstractAnnotator {
 
-    /**
-     * This will set up all properties as private
-     * @param field
-     * @param clazz
-     * @param propertyName
-     * @param propertyNode
-     */
-    @Override
-    public void propertyField(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
-        field.mods().setPrivate();
-        super.propertyField(field, clazz, propertyName, propertyNode);
-    }
+  /**
+   * This will set up all properties as private.
+   * @param field Field to be set.
+   * @param clazz Class type.
+   * @param propertyName Name of property.
+   * @param propertyNode Node of property.
+   */
+  @Override
+  public void propertyField(
+      JFieldVar field,
+      JDefinedClass clazz,
+      String propertyName,
+      JsonNode propertyNode
+  ) {
+    field.mods().setPrivate();
+    super.propertyField(field, clazz, propertyName, propertyNode);
+  }
 
-    /**
-     * Add to the class some of the lombok annotations
-     * @param clazz
-     * @param propertyNode
-     */
-    @Override
-    public void propertyInclusion(JDefinedClass clazz, JsonNode propertyNode) {
+  /**
+   * Add to the class some of the lombok annotations.
+   * @param clazz Class type.
+   * @param propertyNode Node of property.
+   */
+  @Override
+  public void propertyInclusion(JDefinedClass clazz, JsonNode propertyNode) {
 
-            clazz.annotate(Data.class);
-            clazz.annotate(Builder.class);
-            clazz.annotate(NoArgsConstructor.class);
-            clazz.annotate(AllArgsConstructor.class);
+    clazz.annotate(Data.class);
+    clazz.annotate(Builder.class);
+    clazz.annotate(NoArgsConstructor.class);
+    clazz.annotate(AllArgsConstructor.class);
 
-
-    }
+  }
 
 }

@@ -3,57 +3,60 @@ package org.paulushc.js2pojo;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.sun.codemodel.JDefinedClass;
+import com.sun.codemodel.JFieldVar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.sun.codemodel.JFieldVar;
 import org.jsonschema2pojo.AbstractAnnotator;
 
 public class HibernateAnnotator extends AbstractAnnotator {
 
-    /**
-     * If found, add the ID and GeneratedValue annotations to this ID
-     * @param field
-     * @param clazz
-     * @param propertyName
-     * @param propertyNode
-     */
-   @Override
-    public void propertyField(JFieldVar field, JDefinedClass clazz, String propertyName, JsonNode propertyNode) {
+  /**
+   * If found, add the ID and GeneratedValue annotations to this ID.
+   * @param field Field to be checked.
+   * @param clazz Class type.
+   * @param propertyName Name of property.
+   * @param propertyNode Node of property.
+   */
+  @Override
+  public void propertyField(
+      JFieldVar field,
+      JDefinedClass clazz,
+      String propertyName,
+      JsonNode propertyNode
+  ) {
+    if (propertyName.equalsIgnoreCase("id")) {
+      field.annotate(Id.class);
+      field.annotate(GeneratedValue.class).param("strategy", GenerationType.IDENTITY);
+    }
+    super.propertyField(field, clazz, propertyName, propertyNode);
+  }
 
-        if(propertyName.equalsIgnoreCase("id")){
-            field.annotate(Id.class);
-            field.annotate(GeneratedValue.class).param("strategy", GenerationType.IDENTITY);
-        }
-        super.propertyField(field, clazz, propertyName, propertyNode);
+  /**
+   * Add Entity annotation, and if not present, add an ID field.
+   *
+   * @param clazz        Class type
+   * @param propertyNode Node of property.
+   */
+  @Override
+  public void propertyInclusion(JDefinedClass clazz, JsonNode propertyNode) {
+
+    if (propertyNode.get("properties").has("entity")) {
+
+      clazz.annotate(Entity.class);
+      ((ObjectNode) propertyNode.get("properties")).remove("entity");
+      if (!propertyNode.get("properties").has("id")) {
+        ((ObjectNode) propertyNode.get("properties"))
+            .putObject("id")
+            .put("type", "integer")
+            .put("description", "The ID of " + clazz.name())
+            .put("minLength", "1")
+            .put("minimum", "1")
+            .put("required", "1");
+      }
     }
 
-    /**
-     * Add Entity annotation, and if not present, add an ID field
-     * @param clazz
-     * @param propertyNode
-     */
-    @Override
-    public void propertyInclusion(JDefinedClass clazz, JsonNode propertyNode) {
-
-        if(propertyNode.get("properties").has("entity")) {
-
-            clazz.annotate(Entity.class);
-            ((ObjectNode)propertyNode.get("properties")).remove("entity");
-            if(!propertyNode.get("properties").has("id")){
-                ((ObjectNode)propertyNode.get("properties"))
-                        .putObject("id")
-                            .put("type","integer")
-                            .put("description","The ID of " + clazz.name())
-                            .put("minLength","1")
-                            .put("minimum","1")
-                            .put("required","1")
-                ;
-            }
-        }
-
-    }
+  }
 
 }
