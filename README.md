@@ -17,7 +17,7 @@ In your `pom.xml` file, add the following inside your build plugins entry, repla
         <dependency>
             <groupId>org.paulushc</groupId>
             <artifactId>helper-js2pojo</artifactId>
-            <version>0.0.4</version>
+            <version>X.Y.Z</version>
         </dependency>
     </dependencies>
     <configuration>
