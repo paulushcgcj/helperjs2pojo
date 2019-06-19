@@ -59,6 +59,7 @@ coverage:
   stage: test
   script:
     - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS clean verify -P all-tests'
+    - '[ -f target/site/jacoco/index.html ] && cat target/site/jacoco/index.html || echo "Total 0%"'
   except:
     - tags
 

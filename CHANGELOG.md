@@ -18,3 +18,4 @@
 #v1.0.5-SNAPSHOT
  - Adding Information to Readme
  - Adding Sonar to CI
+ - Adding some CI entries
