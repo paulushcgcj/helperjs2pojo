@@ -14,3 +14,6 @@
 
 #v1.0.4
 - Fixing DM URL
+
+#v1.0.5-SNAPSHOT
+- Adding Information to Readme

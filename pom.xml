@@ -6,7 +6,7 @@
 
     <groupId>org.paulushc</groupId>
     <artifactId>helper-js2pojo</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.5-SNAPSHOT</version>
 
     <name>Helper for JSON Schema 2 Pojo</name>
     <description>Custom annotators to be used along with jsonschema2pojo plugin on Maven. With this custom annotator, you can add lombok and JPA support to generated codes.</description>

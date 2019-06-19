@@ -2,6 +2,13 @@
 
 [![pipeline status](https://gitlab.com/paulushc/helperjs2pojo/badges/master/pipeline.svg)](https://gitlab.com/paulushc/helperjs2pojo/commits/master)
 [![coverage report](https://gitlab.com/paulushc/helperjs2pojo/badges/master/coverage.svg)](https://gitlab.com/paulushc/helperjs2pojo/commits/master)
+![Sonar Coverage](https://img.shields.io/sonar/https/sonarcloud.io/paulushcgcj_helperjs2pojo/coverage.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=paulushcgcj_helperjs2pojo&metric=alert_status)](https://sonarcloud.io/dashboard?id=paulushcgcj_helperjs2pojo)
+
+![Maven Central](https://img.shields.io/maven-central/v/org.paulushc/helper-js2pojo.svg)
+![Bintray](https://img.shields.io/bintray/v/paulushc/org.paulushc/helperjs2pojo.svg)
+![GitHub release](https://img.shields.io/github/release/paulushcgcj/helperjs2pojo.svg)
+
 
 This package is intended to be used as custom Annotator to [JsonSchema2Pojo](https://github.com/joelittlejohn/jsonschema2pojo).
 
@@ -43,26 +50,6 @@ In your `pom.xml` file, add the following inside your build plugins entry, repla
             <goals>
                 <goal>generate</goal>
             </goals>
-        </execution>
-    </executions>
-</plugin>
-<plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>build-helper-maven-plugin</artifactId>
-    <version>3.0.0</version>
-    <executions>
-        <execution>
-            <id>Generate JAXB ...</id>
-            <phase>generate-sources</phase>
-            <goals>
-                <goal>add-source</goal>
-            </goals>
-            <configuration>
-                <sources>
-                    <source>${basedir}/target/generated-sources/json</source>
-                    <source>${basedir}/target/generated-sources/java/</source>
-                </sources>
-            </configuration>
         </execution>
     </executions>
 </plugin>
