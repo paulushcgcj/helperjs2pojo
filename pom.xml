@@ -208,4 +208,11 @@
         </repository>
     </distributionManagement>
 
+    <scm>
+        <connection>scm:git:${project.scm.url}</connection>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+        <url>https://github.com/paulushcgcj/helperjs2pojo.git</url>
+    </scm>
+
+
 </project>

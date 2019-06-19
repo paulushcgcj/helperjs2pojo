@@ -41,6 +41,35 @@ check-style:
       - target/site/checkstyle.html
     expire_in: 4 days
 
+unit-test:
+  stage: test
+  script:
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS test'
+  except:
+    - tags
+
+integration-test:
+  stage: test
+  script:
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS verify -P integration-test'
+  except:
+    - tags
+
+coverage:
+  stage: test
+  script:
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS clean verify -P all-tests'
+  except:
+    - tags
+
+qualitygate:
+  stage: test
+  script:
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS package'
+    - 'mvn $MAVEN_OPTS $MAVEN_CLI_OPTS sonar:sonar'
+  except:
+    - tags
+
 build:
   stage: build
   script:
