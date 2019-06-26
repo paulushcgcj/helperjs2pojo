@@ -1,4 +1,4 @@
-package org.paulushc.js2pojo;
+package io.github.paulushcgcj.js2pojo;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.sun.codemodel.JDefinedClass;
