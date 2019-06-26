@@ -5,8 +5,8 @@
 ![Sonar Coverage](https://img.shields.io/sonar/https/sonarcloud.io/paulushcgcj_helperjs2pojo/coverage.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=paulushcgcj_helperjs2pojo&metric=alert_status)](https://sonarcloud.io/dashboard?id=paulushcgcj_helperjs2pojo)
 
-![Maven Central](https://img.shields.io/maven-central/v/org.paulushc/helper-js2pojo.svg)
-![Bintray](https://img.shields.io/bintray/v/paulushc/org.paulushc/helperjs2pojo.svg)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.paulushcgcj/helper-js2pojo.svg)
+![Bintray](https://img.shields.io/bintray/v/paulushc/io.github.paulushcgcj/helperjs2pojo.svg)
 ![GitHub release](https://img.shields.io/github/release/paulushcgcj/helperjs2pojo.svg)
 
 
@@ -14,7 +14,7 @@ This package is intended to be used as custom Annotator to [JsonSchema2Pojo](htt
 
 With this custom annotator, you can add lombok and JPA support to generated codes.
 
-For released versions go directly to [maven central](https://mvnrepository.com/artifact/org.paulushc/helper-js2pojo)
+For released versions go directly to [maven central](https://mvnrepository.com/artifact/io.github.paulushcgcj/helper-js2pojo)
 
 ## How to use it
 
@@ -27,7 +27,7 @@ In your `pom.xml` file, add the following inside your build plugins entry, repla
     <version>0.5.1</version>
     <dependencies>
         <dependency>
-            <groupId>org.paulushc</groupId>
+            <groupId>io.github.paulushcgcj</groupId>
             <artifactId>helper-js2pojo</artifactId>
             <version>X.Y.Z</version>
         </dependency>
@@ -61,12 +61,12 @@ You can choose the annotator that best suits your needs. Below you will find all
 
 ### Lombok
 
-The `org.paulushc.js2pojo.LombokAnnotator` annotator will add Lombok dependencies to your generated file, removing that bunch of boilerplate code, replacing it with Lombok annotations.
+The `io.github.paulushcgcj.js2pojo.LombokAnnotator` annotator will add Lombok dependencies to your generated file, removing that bunch of boilerplate code, replacing it with Lombok annotations.
 With this you will end up with a much more cleaner code.
 
 ### JPA
 
-If you need to add some of the JPA annotations, like `@Entity` and `@Id`, all you have to do is add the custom annotator `org.paulushc.js2pojo.HibernateAnnotator`. Also you will need to add to your schema an entry marking it with entity as true.
+If you need to add some of the JPA annotations, like `@Entity` and `@Id`, all you have to do is add the custom annotator `io.github.paulushcgcj.js2pojo.HibernateAnnotator`. Also you will need to add to your schema an entry marking it with entity as true.
 
 Ex:
 
@@ -97,4 +97,4 @@ Ex:
 
 ### Lobok + JPA
 
-If you want just a single annotator that gives you both worlds, you can use the `org.paulushc.js2pojo.HibernateLombokAnnotator` and have both things in the same annotator.
+If you want just a single annotator that gives you both worlds, you can use the `io.github.paulushcgcj.js2pojo.HibernateLombokAnnotator` and have both things in the same annotator.

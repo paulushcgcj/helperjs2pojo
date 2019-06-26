@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.paulushc</groupId>
+    <groupId>io.github.paulushcgcj</groupId>
     <artifactId>helper-js2pojo</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>Helper for JSON Schema 2 Pojo</name>
     <description>Custom annotators to be used along with jsonschema2pojo plugin on Maven. With this custom annotator, you can add lombok and JPA support to generated codes.</description>
@@ -15,6 +15,22 @@
         <name>Paulo Gomes da Cruz Junior</name>
         <url>https://paulushcgcj.github.io/</url>
     </organization>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>https://raw.githubusercontent.com/paulushcgcj/helperjs2pojo/master/LICENSE.md</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Paulo Gomes da Cruz Junior</name>
+            <email>paulushc@gmail.com</email>
+            <organization>PaulusHC</organization>
+            <organizationUrl>https://paulushcgcj.github.io/</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -202,9 +218,9 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray-paulushc-org.paulushc</id>
-            <name>paulushc-org.paulushc</name>
-            <url>https://api.bintray.com/maven/paulushc/org.paulushc/helperjs2pojo/;publish=1</url>
+            <id>bintray-paulushc-io.github.paulushcgcj</id>
+            <name>paulushc-io.github.paulushcgcj</name>
+            <url>https://api.bintray.com/maven/paulushc/io.github.paulushcgcj/helper-js2pojo/;publish=1</url>
         </repository>
     </distributionManagement>
 
