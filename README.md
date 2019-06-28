@@ -6,7 +6,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=paulushcgcj_helperjs2pojo&metric=alert_status)](https://sonarcloud.io/dashboard?id=paulushcgcj_helperjs2pojo)
 
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.paulushcgcj/helper-js2pojo.svg)
-![Bintray](https://img.shields.io/bintray/v/paulushc/io.github.paulushcgcj/helperjs2pojo.svg)
+![Bintray](https://img.shields.io/bintray/v/paulushc/io.github.paulushcgcj/helper-js2pojo.svg)
 ![GitHub release](https://img.shields.io/github/release/paulushcgcj/helperjs2pojo.svg)
 
 
